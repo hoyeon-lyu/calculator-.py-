@@ -1,11 +1,11 @@
 # calculator
 
 ## info
-**contributer** : hoyeon-lyu
+**contributor** : hoyeon-lyu
 
 **version** : 0.0.0
 
-**data** : 2026-06-12 2:38AM
+**date** : 2026-06-12 4:09AM
 
 ## Program Explanation
 This program made for beginner to senior user. (Usually undergraduated-graduated students)
