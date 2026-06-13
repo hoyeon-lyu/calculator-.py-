@@ -1,11 +1,30 @@
 {
     "info": {
-        "contributor": ["hoyeon-lyu"],
+        "contributor": [
+            "hoyeon-lyu"
+        ],
         "version": "0.0.0",
         "date": "2026-06-12 4:09AM"
     },
+    "is_default": true,
+    "setting_info": {
+        "terminal_mode": {
+            "type": "bool",
+            "options": null
+        },
+        "language": {
+            "type": "str",
+            "options": [
+                "English",
+                "Korean"
+            ]
+        },
+        "user_name": {
+            "type": "str",
+            "options": null
+        }
+    },
     "user_info": {
-        "isdefault": true,
         "terminal_mode": true,
         "user_name": "USER",
         "language": "English"
