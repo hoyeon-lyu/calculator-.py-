@@ -104,6 +104,10 @@ with open("setting.json", "r", encoding="utf-8") as f:
     setting.SETTINGS = json.load(f)
     setting.LANG = setting.SETTINGS["user_info"]["language"]
 
+tasks = [
+    "calculation", "graph"
+]
+
 #터미널 모드
 class term_calc:
 
@@ -124,6 +128,29 @@ class term_calc:
                     print("Please try again.")
                     #do-while문을 간접적으로 구현한다.
                     flag = True
+    
+    def run():
+        task = prompt(
+            "\nTask:",
+            completer=WordCompleter(tasks),
+            bottom_toolbar=lambda:f"tasks:{', '.join(tasks)}"
+            )
+        if task.lower() == "calculate":
+            expression = input("Enter an expression or equation:")
+            tokenized_exp = tokeni.Action.tokenize(expression)
+            if isinstance(tokenized_exp, tokeni.Expression):
+                result = tokeni.Action.calculate(tokenized_exp)
+                #출력은 나중에 구현
+            elif isinstance(tokenized_exp, tokeni.Equation):
+                result = tokeni.Action.evaluate(tokenized_exp)
+                #출력은 나중에 구현
+
+class gui_calc:
+    def run():
+        pass
 
 trmc = term_calc()
+guic = gui_calc()
 trmc.start()
+if setting.SETTINGS["user_info"]["terminal_mode"]:trmc.run()
+else:guic.run()
